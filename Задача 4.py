@@ -20,12 +20,19 @@ print()
 
 #  Открываем файл в режиме чтения, получаем номера позиций элементов, вычисляем произведение элементов
 file = open('file.txt', 'r')
+a=[]
 product = 1
-print('Содержание файла: ')
+
 for i in file:
-    print(i, end='')
-    product*= s[int(i)]
+    a.append(int(i))
+    # print(i, end='')
+a=set(a)
+
+for i in a:
+    if int(i) < len(s):
+        product*= s[i]
     
 file.close()
-print()
-print(f'Произведение заданных эементов = {product}')
+
+print(f'Произведение заданных эементов = {product} ')
+print(a)
