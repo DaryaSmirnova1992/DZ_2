@@ -1,24 +1,12 @@
 # Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
 
-def InputNumbers(inputText):
-    is_OK = False
-    while not is_OK:
-        try:
-            number = float(input(f"{inputText}"))
-            is_OK = True
-        except ValueError:
-            print("Ошибка! Введено не число.")
-    return number
+a = input('Вещественное число: ')
+a = a.replace('-', '')
+a = a.replace('.', '')
+a = a.replace(',', '')
+b = list(a)
 
-
-def sumNums(num):
-    sum = 0
-    for i in str(num):
-        if i != ".":
-            sum += int(i)
-    return sum
-
-
-num = InputNumbers("Введите число: ")
-
-print(f"Сумма цифр = {sumNums(num)}")
+sum = 0
+for i in b:
+    sum += int(i)
+    print(sum)
